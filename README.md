@@ -1,4 +1,4 @@
-## Braille App [Machine Learning Part]
+## Braille App [Machine Learning Part] ✨
 
 ## Keterangan File
 
