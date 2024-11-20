@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/taqwims/BrailleApp#readme",
   "dependencies": {
+    "brailleapp": "file:",
     "express": "^4.21.1"
   },
   "devDependencies": {
