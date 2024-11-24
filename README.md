@@ -6,23 +6,23 @@ Welcome to the **Braille App** project! 🌸 This part of the project focuses on
 
 ## 🌟 Keterangan File (File Descriptions) 🌟
 
-### 📸 **braille_dataset**
+- **📸 braille_dataset**  
 Direktori yang berisi kumpulan gambar Braille dalam format **.jpg** sebelum dataset ini dibagi menjadi **training** dan **validation**. 📷  
 This folder contains raw Braille images in **.jpg** format, ready to be split into training and validation datasets.
 
-### 🗂️ **splitted_dataset.zip**
+- **🗂️ splitted_dataset.zip**  
 File zip ini berisi **2 folder**: **train_img** dan **val_img** yang berisi masing-masing dataset yang sudah di **split** untuk **training** dan **validation**. 🎁  
 This zip file contains **2 folders**: **train_img** and **val_img**, which include the split datasets for **training** and **validation**. It's ready for use in training the model!
 
-### 📑 **braille_code.ipynb**
+- **📑 braille_code.ipynb**  
 File ini adalah notebook **Jupyter** yang digunakan untuk **preprocessing** data dan pembuatan model **machine learning**. ✨  
 This is the **Jupyter Notebook** file where the magic happens! It’s used for **data preprocessing** and building the **machine learning model** that learns to recognize Braille patterns.
 
-### 🧠 **braille_model.h5**
+- **🧠 braille_model.h5**  
 File ini merupakan hasil model yang sudah dilatih dan diekstraksi ke dalam format **.h5**. 🔮  
 This is the trained model, saved in **.h5** format, ready for deployment! It contains the knowledge of Braille image recognition.
 
-### 💻 **braille_binary.xlsx**
+- **💻 braille_binary.xlsx**  
 File ini berisi **pola biner** dari setiap karakter Braille, yang digunakan untuk memetakan gambar ke karakter Braille yang sesuai. 📊  
 This **.xlsx** file contains the **binary patterns** for each Braille character, helping the model map images to the correct Braille characters.
 
@@ -43,7 +43,7 @@ Click the link below to explore the dashboard and see the Braille recognition in
 
 ---
 
-## 👩‍💻👨‍💻 **Machine Learning Members** 👩‍💻👨‍💻
+## 👩‍💻👨‍💻 **Meet the Machine Learning Team** 👩‍💻👨‍💻
 
 Here are the members behind the machine learning! 💖
 
