@@ -39,7 +39,7 @@ The **Braille App** project empowers visually impaired individuals by automating
 We've created a **Streamlit Dashboard** to visualize and interact with the model results in real-time! ✨  
 Click the link below to explore the dashboard and see the Braille recognition in action! 💻🎉
 
-🔗 [**Braille App Streamlit Dashboard**]([http://your-dashboard-link-here](https://dashboard-fgpfsdetquexzskp45mwbm.streamlit.app/))
+🔗 [**Braille App Streamlit Dashboard**](https://dashboard-fgpfsdetquexzskp45mwbm.streamlit.app/)
 
 ---
 
