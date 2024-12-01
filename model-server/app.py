@@ -1,3 +1,4 @@
+from gcs_handler import upload_to_gcs, save_metadata_to_firestore
 from flask import Flask, request, jsonify
 import tensorflow as tf
 from PIL import Image
@@ -39,15 +40,31 @@ def predict():
         # Prediksi menggunakan model
         prediction = model.predict(input_tensor)
         class_index = np.argmax(prediction)
-        predicted_label = chr(97 + class_index)  # Convert index ke huruf
+        if 0 <= class_index < 26:  # Pastikan indeks valid untuk alfabet
+            predicted_label = chr(97 + class_index)  # Convert index ke huruf
+        else:
+            predicted_label = "Unknown"
+
+        # Upload gambar ke GCS
+        gcs_image_path = f"uploads/{file.filename}"
+        gcs_url = upload_to_gcs(file_path, gcs_image_path)
+
+        # Simpan metadata ke Firestore
+        metadata = {
+            'image_url': gcs_url,
+            'prediction': predicted_label,
+        }
+        save_metadata_to_firestore('predictions', file.filename, metadata)
 
         # Hapus file sementara
         os.remove(file_path)
 
         # Kirim hasil prediksi
-        return jsonify({'prediction': predicted_label})
+        return jsonify({'prediction': predicted_label, 'image_url': gcs_url})
     except Exception as e:
         os.remove(file_path)
         return jsonify({'error': str(e)}), 500
+
+
 if __name__ == '__main__':
     app.run(debug=True)
