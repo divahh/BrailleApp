@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">BrailleApp</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_scan">Scan</string>
+    <string name="title_game">Game</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="header_game">GAME</string>
+    <string name="header_scan">SCAN</string>
+    <string name="camera_icon">Camera icon</string>
+    <string name="game_icon">Game icon</string>
+    <string name="ready_scanning">READY FOR SCANNING?</string>
+    <string name="ready_game">READY FOR SOME GAME?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
 </resources>
