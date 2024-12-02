@@ -1,23 +1,28 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/brailleapps/braille-app', '.']
-
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/brailleapps/braille-app']
-
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
   args:
-    - 'run'
-    - 'deploy'
-    - 'braille-app'
-    - '--image'
-    - 'gcr.io/[PROJECT_ID]/braille-app'
-    - '--region'
-    - 'us-central1'
-    - '--platform'
-    - 'managed'
-    - '--allow-unauthenticated'
+    - '-c'
+    - |
+      # Ekspor secret credentials.json ke variabel
+      echo $$(gcloud secrets versions access latest --secret=gcp-credentials) > credential.json
 
-images:
-- 'gcr.io/brailleapps/braille-app'
+      # Install dependencies
+      pip install -r requirements.txt
+
+      # Jalankan aplikasi untuk testing
+      python app.py
+
+# Deploy aplikasi ke Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+    - run
+    - deploy
+    - my-app
+    - --source=.
+    - --platform=managed
+    - --region=asia-southeast2
+    - --allow-unauthenticated
+    - --update-env-vars=GOOGLE_APPLICATION_CREDENTIALS=credential.json
+
+timeout: '1200s'
