@@ -4,3 +4,6 @@ Pillow
 numpy
 google-cloud-storage
 google-cloud-firestore
+google-auth
+google-auth-oauthlib
+gunicorn

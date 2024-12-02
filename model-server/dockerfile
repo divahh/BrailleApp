@@ -1,22 +1,20 @@
+# Gunakan base image Python
 FROM python:3.9-slim
 
-ENV PYTHONUNBUFFERED=1
-ENV PORT=8080
-ENV GOOGLE_APPLICATION_CREDENTIALS=/app/credential.json
-
+# Set direktori kerja di dalam container
 WORKDIR /app
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
+# Salin semua file ke dalam container
 COPY . .
 
-RUN chmod 400 credential.json
-RUN useradd -m -d /app myuser
-USER myuser
+# Install dependensi
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Expose port Flask (default 8080 di Cloud Run)
 EXPOSE 8080
 
-HEALTHCHECK --interval=30s --timeout=3s CMD curl --fail http://localhost:8080/health || exit 1
+# Set variabel lingkungan untuk kredensial GCP
+ENV GOOGLE_APPLICATION_CREDENTIALS="/app/credential.json"
 
-CMD ["exec", "python", "app.py"]
+# Jalankan aplikasi dengan Gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
