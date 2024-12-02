@@ -25,4 +25,7 @@ steps:
     - --allow-unauthenticated
     - --update-env-vars=GOOGLE_APPLICATION_CREDENTIALS=credential.json
 
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 timeout: '1200s'
