@@ -10,7 +10,7 @@
         <!-- Secondary button. -->
         <item name="colorSecondary">@color/dark_blue</item>
         <!-- hover button. -->
-        <item name="colorSecondaryVariant">@color/background_app</item>
+        <item name="colorSecondaryVariant">@color/white</item>
         <!-- text or icon on colorSecondary. -->
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->

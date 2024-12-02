@@ -6,12 +6,16 @@
 
     <string name="header_game">GAME</string>
     <string name="header_scan">SCAN</string>
+    <string name="header_profile">PROFILE</string>
     <string name="camera_icon">Camera icon</string>
     <string name="game_icon">Game icon</string>
     <string name="ready_scanning">READY FOR SCANNING?</string>
     <string name="ready_game">READY FOR SOME GAME?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="your_photo">Your Photo</string>
+    <string name="add_photo_icon">Add photo icon</string>
+    <string name="edit_icon">edit icon</string>
 
 
 </resources>
