@@ -26,6 +26,7 @@ steps:
     - --update-env-vars=GOOGLE_APPLICATION_CREDENTIALS=credential.json
 
 options:
+  region: us-central1
   logging: CLOUD_LOGGING_ONLY
 
 timeout: '1200s'
