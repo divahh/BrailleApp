@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">BrailleApp</string>
     <string name="title_scan">Scan</string>
-    <string name="title_game">Game</string>
+    <string name="title_game">Games</string>
     <string name="title_profile">Profile</string>
 
-    <string name="header_game">GAME</string>
+    <string name="header_game">GAMES</string>
     <string name="header_scan">SCAN</string>
     <string name="header_profile">PROFILE</string>
     <string name="camera_icon">Camera icon</string>
@@ -16,6 +16,22 @@
     <string name="your_photo">Your Photo</string>
     <string name="add_photo_icon">Add photo icon</string>
     <string name="edit_icon">edit icon</string>
+    <string name="logout">LOGOUT</string>
+    <string name="save">SIMPAN</string>
+    <string name="info">Info</string>
+    <string name="age">Usia</string>
+    <string name="email">Email</string>
+    <string name="name">Nama</string>
+    <string name="welcome">Selamat Datang, Yaya!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_header_list">LIST BRAILLE</string>
+    <string name="image_words">Image Words</string>
+    <string name="words">Huruf</string>
+    <string name="next_page">Next Page</string>
+    <string name="numbers">Angka</string>
+    <string name="symbols">Simbol</string>
+    <string name="extras">Ekstra</string>
 
 
 </resources>

@@ -20,6 +20,6 @@
     <fragment
         android:id="@+id/navigation_game"
         android:name="com.example.brailleapp.ui.game.GameFragment"
-        android:label="@string/header_game"
+        android:label="@string/title_game"
         tools:layout="@layout/fragment_game" />
 </navigation>

@@ -12,7 +12,7 @@
         android:id="@+id/top_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="30dp"
+        android:paddingBottom="20dp"
         android:background="@drawable/bg_colored_bottom_rounded_corner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,6 @@
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:text="@string/header_profile"
             android:background="@drawable/bg_bottom_rounded_corner"
             app:layout_constraintEnd_toEndOf="parent"
@@ -78,9 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="280dp"
-            android:text="Selamat Datang, Yaya!"
+            android:text="@string/welcome"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:textColor="@android:color/black" />
     </FrameLayout>
 
@@ -88,7 +86,7 @@
         android:id="@+id/name_container"
         android:layout_width="325dp"
         android:layout_height="42dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_colored_all_rounded_corner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,9 +98,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
             android:layout_margin="10dp"
-            android:text="Nama"
+            android:text="@string/name"
             android:textSize="16sp"
-            android:textStyle="bold"
             android:textColor="@android:color/black" />
 
         <ImageView
@@ -131,9 +128,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
             android:layout_margin="10dp"
-            android:text="Email"
+            android:text="@string/email"
             android:textSize="16sp"
-            android:textStyle="bold"
             android:textColor="@android:color/black" />
 
         <ImageView
@@ -162,9 +158,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
             android:layout_margin="10dp"
-            android:text="Usia"
+            android:text="@string/age"
             android:textSize="16sp"
-            android:textStyle="bold"
             android:textColor="@android:color/black" />
 
         <ImageView
@@ -193,9 +188,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
             android:layout_margin="10dp"
-            android:text="Info"
+            android:text="@string/info"
             android:textSize="16sp"
-            android:textStyle="bold"
             android:textColor="@android:color/black" />
 
         <ImageView
@@ -210,13 +204,25 @@
 
     <Button
         android:id="@+id/btn_save"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-
-        android:text="SIMPAN"
+        android:background="@drawable/bg_colored_all_rounded_corner"
+        android:text="@string/save"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/info_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_black_all_rounded_corner"
+        android:text="@string/logout"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btn_save"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

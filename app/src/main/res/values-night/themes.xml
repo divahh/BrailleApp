@@ -10,14 +10,16 @@
         <!-- Secondary button. -->
         <item name="colorSecondary">@color/dark_blue</item>
         <!-- hover button. -->
-        <item name="colorSecondaryVariant">@color/background_app</item>
+        <item name="colorSecondaryVariant">@color/black</item>
         <!-- text or icon on colorSecondary. -->
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize font. -->
-        <item name="android:fontFamily">@font/plusjakartasans_variablefont_wght</item>
+        <item name="android:fontFamily">@font/plusjakartasans_extrabold</item>
         <!-- Customize background color. -->
         <item name="android:windowBackground">@color/background_app</item>
+        <!-- Customize navigation bar. -->
+        <item name="android:navigationBarColor">@color/black</item>
     </style>
 </resources>
