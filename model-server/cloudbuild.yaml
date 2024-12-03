@@ -22,9 +22,8 @@ steps:
   - '--set-secrets'
   - 'gcp-credentials=gcp-credentials:latest'
 
-  
+
 # Opsi tambahan (opsional)
 options:
-  region: asia-southeast2
   logging: CLOUD_LOGGING_ONLY
 timeout: '1200s'
