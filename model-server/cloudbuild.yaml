@@ -23,6 +23,7 @@ steps:
   - '--allow-unauthenticated'
   - '--update-secrets'
   - 'gcp-credentials=credential-json:latest'
+  entrypoint: gcloud
 
 # Opsi tambahan (opsional)
 options:
