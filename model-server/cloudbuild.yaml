@@ -27,4 +27,3 @@ options:
   region: asia-southeast2
   logging: CLOUD_LOGGING_ONLY
 timeout: '1200s'
-
