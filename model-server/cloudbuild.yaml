@@ -22,6 +22,7 @@ steps:
   - '--set-secrets'
   - 'gcp-credentials=gcp-credentials:latest'
 
+  
 # Opsi tambahan (opsional)
 options:
   region: asia-southeast2
