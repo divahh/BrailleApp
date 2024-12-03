@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose port Flask (opsional, jika menggunakan default Flask port)
-EXPOSE 5000
+EXPOSE 8080
 
 # Menjalankan aplikasi Flask
 CMD ["python", "app.py"]
