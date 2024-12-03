@@ -1,25 +1,11 @@
-# Tahap build dependensi
-FROM python:3.9-slim as build
+FROM python:3.9-slim
 
 WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy credential.json ke dalam container
-COPY credential.json /app/credential.json
-
-# Tahap build aplikasi akhir
-FROM python:3.9-slim
-
-WORKDIR /app
-
-COPY --from=build /app /app
-
 COPY . .
 
-# Expose port Flask (default 8080 di Cloud Run)
 EXPOSE 8080
-
-# Jalankan aplikasi dengan Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
