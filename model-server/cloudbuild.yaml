@@ -27,4 +27,4 @@ steps:
 # Opsi tambahan (opsional)
 options:
   logging: CLOUD_LOGGING_ONLY
-timeout: '900s'
+timeout: '1200s'

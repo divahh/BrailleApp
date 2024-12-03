@@ -1,7 +1,6 @@
 from google.cloud.firestore import SERVER_TIMESTAMP # Firestore timestamp
 from google.oauth2 import service_account
 from google.cloud import storage, firestore
-import os
 
 # Inisialisasi klien Google Cloud Storage dan Firestore
 credentials = service_account.Credentials.from_service_account_file(
