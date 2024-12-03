@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "brailleapps",
+  "private_key_id": "f1d0b94e2239581f68ec4479a1fd1e0e7f2c352a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDBpzJ1ew1e/Tdq\nCFMWPwAOZb10bdimadjkM7dl3CZA/ZE0rZz+eFt1Il2NEGex4rGM1todNSn8gf6H\nGiIYkms37O9HbBpniQBmlM5kD5Y/nluoJV/KMupiuFlYIH50veptn7ThzN3PGPQP\nOzcsdk//gq+Mpf1mFHoKNpo/CpBJyPcVw4m5qcK9nd6jL12wQo80JXEiPdKooahO\nlDxOWqlqXmesPld9ceG2q83p4vQprG/OIapuJZ28JhSoXNIlKCRRKjulc+IjJAuB\nlvVMCmZeSUS8CGMO0sn5BCRCVrq9dFZQP3BP2xHoeFcrbvip8RzUDp0CgBCFZeTf\nmx1QrRMJAgMBAAECggEAAwO8qJEZLflNAS3qI31yAf455CYILwHd0P3nG+fAy0Si\nrfgKM9QzZEbpv3qi+FLevbR2PXu64vOf9csqI23ty4CUhLYvmi8mcGAVXP/UQrqP\nASROqMrui5K7hndSdTQRpq1dt0XcPBhzInb+cz30i0hcvfQg+spUq70IAdDMEYH0\nFVGbjKtDCGoLBF9EZuwEu3b4EtV90JTgXDKiE8RmQFvdticwke90ZxHAsIZ33+/D\nHYuX+DGTUZQe+8yU14//M2pza9uYsXV0TBZ7uaHRpDh8yHNConsM1UYboC3MoUht\nHxyyl+2DGdebAexZBmyDRJMthXrO3Spmsji7QEtJgQKBgQDp/bHKPzZMJ0ehl5DV\nD6PpHr0fa6jnJ/uxFNxdZ/4lIK+S2xx2uYi2icso1LMFtt/0VIidtsi+Gv16DHhT\nLaGJdH+K0q9Gjj/nwZI5v9WD8DXndCBrIbt+aqzQYuuJuZDtZe5nROfWO2NZRmHs\n7n8EZ3WMBytEK9Dk2f83uVzxqQKBgQDT3jNVaO71Z6nHXRl0jzxs90gQvI1D4egQ\nXw3sdQBwhnMcXMM0T4u9Hpt8M5BLehPAK4HDceqOE0GXa7K5HDOgC7s9MZQO8NG0\nM8BP6Ba9iJ+q+gAJRPDlaznea53Ru01loC1MWXtfQTiNvaNK85uu8N5MVyRRnfcK\nObHS8b6yYQKBgAWIuIG+CPy4GRubSBOh8RB8Z6CsnSwKaAuCIMwcv4gFQ+HHSN8N\n+EvI6oMmtK037AgNT8XbIthMLx6J2Paup5lmpfWUkgyrJJvImjq/bL9YGQ5GUtX1\n0EdnInszO7rgJqtWs9LBcHJCqVDdN0exRFPIVqFfMgjEuIYRGdYpjicxAoGAIcUT\nDZQSMo95YkuWmRuTmBK6K+DB64YAhUuBXqUvkr/7bRPkEVx0e4p7Ygqd/0nQCBtn\nLY3kwwySsd36uMKj/+ieyZwza0Y7RqvRBWuK5F74hDog81lHxGmY6bjhiOJ/7ajg\nT4Ebxw0QRJdrhbDaqcG+zRA+u7uf+sNDcsoRiUECgYApx3D5Voa5VoLrRzQAjiAf\nJ2NIVzw81DRAIImru4M66FmbGwSHtRTRc9x2HIrDjjChp77erechJfopu1Gwb/JQ\nX5ZB/GZo7HKmPwySM86QrwwQzDO+VVdlzVhqCMioR8KmpRFroVvmWmhb3uPfPOyp\nP2z2xUByrXE5I+01GBJdyw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "deploymodel@brailleapps.iam.gserviceaccount.com",
+  "client_id": "113895963499672563015",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/deploymodel%40brailleapps.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

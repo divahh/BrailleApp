@@ -4,7 +4,7 @@ from google.cloud import storage, firestore
 
 # Inisialisasi klien Google Cloud Storage dan Firestore
 credentials = service_account.Credentials.from_service_account_file(
-    'credential.json'
+    'key.json'
 )
 
 # Inisialisasi klien Google Cloud Storage dan Firestore dengan credentials
