@@ -1,10 +1,10 @@
 steps:
 # Build image Docker
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/braille-app:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA', '.']
 # Push image ke Google Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/braille-app:$COMMIT_SHA']
+  args: ['push', 'gcr.io/$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA']
 # Deploy ke Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
@@ -13,7 +13,7 @@ steps:
   - 'deploy'
   - 'my-app'
   - '--image'
-  - 'gcr.io/$PROJECT_ID/braille-app:$COMMIT_SHA'
+  - 'gcr.io/$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA'
   - '--region'
   - 'asia-southeast2'
   - '--platform'

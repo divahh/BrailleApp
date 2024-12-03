@@ -6,6 +6,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy credential.json ke dalam container
+COPY credential.json /app/credential.json
+
 # Tahap build aplikasi akhir
 FROM python:3.9-slim
 
