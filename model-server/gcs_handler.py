@@ -1,39 +1,32 @@
+from google.cloud import storage, firestore
+from google.oauth2 import service_account
 from google.cloud.firestore import SERVER_TIMESTAMP  # Firestore timestamp
-from google.cloud import storage, firestore, secretmanager
+import os
+import json
 
-# Inisialisasi Secret Manager
-SECRET_NAME = "gcs-credentials"
-SECRET_VERSION = "latest"
-PROJECT_ID = "476849970219"
-
-def get_credentials_from_secret_manager():
-    """
-    Mengambil kredensial dari Secret Manager.
-    """
+# Mengambil kredensial dari variabel lingkungan
+def get_credentials_from_env_var():
     try:
-        # Inisialisasi klien Secret Manager
-        client = secretmanager.SecretManagerServiceClient()
+        # Ambil isi secret dari variabel lingkungan
+        credentials_json = os.getenv("gcp-credentials")
+        if not credentials_json:
+            raise ValueError("GCP_CREDENTIALS environment variable not set or empty.")
         
-        # Format nama secret
-        secret_name = f"projects/{PROJECT_ID}/secrets/{SECRET_NAME}/versions/{SECRET_VERSION}"
-        
-        # Mengakses versi secret
-        response = client.access_secret_version(name=secret_name)
-        
-        # Membaca payload secret
-        credentials_json = response.payload.data.decode("UTF-8")
-        return service_account.Credentials.from_service_account_info(eval(credentials_json))
+        # Parse JSON ke dalam format yang sesuai
+        credentials_info = json.loads(credentials_json)
+        return service_account.Credentials.from_service_account_info(credentials_info)
     except Exception as e:
-        print(f"Error fetching credentials from Secret Manager: {e}")
+        print(f"Error fetching credentials: {e}")
         raise
 
-# Ambil kredensial dari Secret Manager
-credentials = get_credentials_from_secret_manager()
+# Ambil kredensial dari Secret Manager melalui variabel lingkungan
+credentials = get_credentials_from_env_var()
 
 # Inisialisasi klien Google Cloud Storage dan Firestore dengan kredensial
 storage_client = storage.Client(credentials=credentials)
 firestore_client = firestore.Client(credentials=credentials)
 
+# Konfigurasi bucket GCS
 GCS_BUCKET_NAME = 'modelbraille'
 
 # Fungsi untuk mengunggah file ke GCS
