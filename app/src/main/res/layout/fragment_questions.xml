@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="0/5"
+        android:text="@string/default_score"
         android:textColor="@color/black"
         android:textAlignment="center"
         android:textSize="16sp"
@@ -38,7 +38,7 @@
         android:id="@+id/tv_questions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Apakah huruf braille dari  huruf C?"
+        android:text="@string/question_1_c"
         android:textColor="@color/black"
         android:textAlignment="center"
         android:textSize="16sp"
@@ -52,7 +52,7 @@
         android:layout_height="170dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
-        android:text="Tombol 1"
+        android:text="@string/btn1"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_questions" />
@@ -63,7 +63,7 @@
         android:layout_height="170dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="28dp"
-        android:text="Tombol 2"
+        android:text="@string/btn2"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_questions" />
@@ -74,7 +74,7 @@
         android:layout_height="170dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="10dp"
-        android:text="Tombol 3"
+        android:text="@string/btn3"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_1" />
@@ -85,7 +85,7 @@
         android:layout_height="170dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="28dp"
-        android:text="Tombol 4"
+        android:text="@string/btn4"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_2" />
@@ -96,7 +96,7 @@
         android:layout_height="170dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="10dp"
-        android:text="Tombol 5"
+        android:text="@string/btn5"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_3" />
@@ -107,17 +107,17 @@
         android:layout_height="170dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="28dp"
-        android:text="Tombol 6"
+        android:text="@string/btn6"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_4" />
 
     <Button
-        android:layout_width="300dp"
+        android:layout_width="305dp"
         android:layout_height="50dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/bg_all_rounded_corner"
-        android:text="Lanjut"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

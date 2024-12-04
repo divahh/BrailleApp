@@ -3,23 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_scan">
 
+    <!-- Scan Fragment -->
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.brailleapp.ui.profile.ProfileFragment"
-        android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_scan"
         android:name="com.example.brailleapp.ui.scan.ScanFragment"
         android:label="@string/title_scan"
         tools:layout="@layout/fragment_scan" />
 
+    <!-- Game Fragment -->
     <fragment
-        android:id="@+id/navigation_game"
+        android:id="@+id/navigation_games"
         android:name="com.example.brailleapp.ui.game.GameFragment"
         android:label="@string/title_game"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_questionsFragment"
+            app:destination="@+id/navigation_questions"/>
+    </fragment>
+
+    <!-- Profile Fragment -->
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.brailleapp.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <!-- Questions Fragment -->
+    <fragment
+        android:id="@+id/navigation_questions"
+        android:name="com.example.brailleapp.ui.game.GameFragment"
+        android:label="@string/title_game"
+        tools:layout="@layout/fragment_questions">
+        <action
+            android:id="@+id/action_questionsFragment_to_congratulateFragment"
+            app:destination="@+id/navigation_congratulate"/>
+    </fragment>
+
+    <!-- Congratulate Fragment -->
+    <fragment
+        android:id="@+id/navigation_congratulate"
+        android:name="com.example.brailleapp.ui.game.GameFragment"
+        android:label="@string/title_game"
+        tools:layout="@layout/fragment_congratulate"/>
+
 </navigation>

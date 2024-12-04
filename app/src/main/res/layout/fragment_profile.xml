@@ -204,7 +204,7 @@
 
     <Button
         android:id="@+id/btn_save"
-        android:layout_width="300dp"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_colored_all_rounded_corner"
@@ -216,7 +216,7 @@
 
     <Button
         android:id="@+id/btn_logout"
-        android:layout_width="300dp"
+        android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_black_all_rounded_corner"

@@ -10,9 +10,9 @@
         <!-- Secondary button. -->
         <item name="colorSecondary">@color/dark_blue</item>
         <!-- hover button. -->
-        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorSecondaryVariant">@color/dark_blue</item>
         <!-- text or icon on colorSecondary. -->
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/dark_blue</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize font. -->
@@ -21,5 +21,6 @@
         <item name="android:windowBackground">@color/background_app</item>
         <!-- Customize navigation bar. -->
         <item name="android:navigationBarColor">@color/white</item>
+
     </style>
 </resources>

@@ -3,6 +3,7 @@
     <string name="title_scan">Scan</string>
     <string name="title_game">Games</string>
     <string name="title_profile">Profile</string>
+    <string name="title_setting">Settings</string>
 
     <string name="header_game">GAMES</string>
     <string name="header_scan">SCAN</string>
@@ -23,15 +24,32 @@
     <string name="email">Email</string>
     <string name="name">Nama</string>
     <string name="welcome">Selamat Datang, Yaya!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="tv_header_list">LIST BRAILLE</string>
     <string name="image_words">Image Words</string>
+    <string name="image_numbers">Image Numbers</string>
+    <string name="image_symbols">Image Symbols</string>
+    <string name="image_extras">Image Extras</string>
     <string name="words">Huruf</string>
     <string name="next_page">Next Page</string>
     <string name="numbers">Angka</string>
     <string name="symbols">Simbol</string>
     <string name="extras">Ekstra</string>
+    <string name="back">Kembali</string>
+    <string name="back_to_home_games">Kembali ke Home Games</string>
+    <string name="trophy_for_answering">Trophy for answering</string>
+    <string name="default_score">0/5</string>
+    <string name="default_congratulate">Semangat Belajar Braille!</string>
+    <string name="congrats">SELAMAT!</string>
+    <string name="answer_default">Anda menjawab dengan benar sebanyak</string>
+    <string name="question_1_c">Apakah huruf braille dari huruf C?</string>
+    <string name="btn1">Tombol 1</string>
+    <string name="btn2">Tombol 2</string>
+    <string name="btn3">Tombol 3</string>
+    <string name="btn4">Tombol 4</string>
+    <string name="btn5">Tombol 5</string>
+    <string name="btn6">Tombol 6</string>
+    <string name="next">Lanjut</string>
 
 
 </resources>
