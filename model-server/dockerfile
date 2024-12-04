@@ -13,8 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Salin semua file ke dalam container, kecuali yang ada di .gitignore
 COPY . .
 
-# Expose port Flask (opsional, jika menggunakan default Flask port)
-EXPOSE 8080
-
-# Menjalankan aplikasi Flask
-CMD ["python", "app.py"]
+# Jalankan aplikasi Flask dengan Gunicorn
+CMD ["gunicorn", "--bind", ":8080", "app:app"]

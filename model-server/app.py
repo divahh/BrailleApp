@@ -4,8 +4,13 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 import os
+import logging
 
 app = Flask(__name__)
+
+# Konfigurasi logging
+logging.basicConfig(level=logging.ERROR, 
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Folder untuk menyimpan file sementara
 UPLOAD_FOLDER = 'uploads'
@@ -13,10 +18,14 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Load model yang telah disimpan
-model = tf.keras.models.load_model('./model/braille_model.h5')
+try:
+    model = tf.keras.models.load_model('./model/braille_model.h5')
+except Exception as e:
+    logging.exception("Error loading the model:")
 
 # Ukuran input model
 img_height, img_width = 64, 64
+
 def preprocess_image(img_path):
     img = Image.open(img_path).convert('L')  # Grayscale
     img = img.resize((img_height, img_width))  # Resize ke (64, 64)
@@ -24,6 +33,7 @@ def preprocess_image(img_path):
     img_array = np.expand_dims(img_array, axis=-1)  # Tambahkan dimensi channel
     img_array = np.expand_dims(img_array, axis=0)  # Tambahkan dimensi batch
     return img_array
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'image' not in request.files:
@@ -31,9 +41,10 @@ def predict():
 
     file = request.files['image']
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-    file.save(file_path)
-
+    
     try:
+        file.save(file_path)
+
         # Preprocessing gambar
         input_tensor = preprocess_image(file_path)
 
@@ -56,15 +67,16 @@ def predict():
         }
         save_metadata_to_firestore('predictions', file.filename, metadata)
 
-        # Hapus file sementara
-        os.remove(file_path)
-
         # Kirim hasil prediksi
         return jsonify({'prediction': predicted_label, 'image_url': gcs_url})
-    except Exception as e:
-        os.remove(file_path)
-        return jsonify({'error': str(e)}), 500
 
+    except Exception as e:
+        logging.exception("Error during prediction:")
+        return jsonify({'error': str(e)}), 500
+    finally:
+        # Hapus file sementara di blok finally untuk memastikan file selalu dihapus
+        if os.path.exists(file_path):
+            os.remove(file_path)  
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    app.run() #  Gunakan app.run() saat menggunakan Gunicorn
