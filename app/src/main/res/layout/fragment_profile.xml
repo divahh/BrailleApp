@@ -1,230 +1,445 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?attr/colorPrimaryVariant"
     tools:context=".ui.profile.ProfileFragment">
+<!--    android:background="?attr/colorOnSecondary"-->
 
-    <!-- FrameLayout untuk Header, Foto Profil, dan Salam -->
-    <FrameLayout
-        android:id="@+id/top_container"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/header" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
-        android:background="@drawable/bg_colored_bottom_rounded_corner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:paddingBottom="10dp"
+        tools:ignore="UseSwitchCompatOrMaterialXml">
 
-        <!-- Header Profil -->
-        <TextView
-            android:id="@+id/tv_game"
-            android:layout_width="193dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:text="@string/header_profile"
-            android:background="@drawable/bg_bottom_rounded_corner"
+
+        <!-- Profile Image -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:alpha="1"
+            android:scaleType="fitStart"
+            android:src="@drawable/awan"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-        <!-- Foto Profil -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_profile"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
-            app:cardCornerRadius="85dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@android:color/white">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile_image"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginEnd="24dp"
+            android:contentDescription="@string/profile_image"
+            android:src="@drawable/powerpuff"
+            android:alpha="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars"
+            tools:alpha="100"/>
 
-            <ImageView
-                android:id="@+id/iv_profile_image"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_face_24"
-                android:contentDescription="@string/your_photo" />
-        </androidx.cardview.widget.CardView>
 
-        <!-- Ikon Tambah -->
-        <ImageView
-            android:id="@+id/iv_add_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginStart="60dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/bg_circle"
-            android:src="@drawable/ic_add_24dp"
-            android:padding="8dp"
-            android:elevation="8dp"
-            android:contentDescription="@string/add_photo_icon" />
-
-        <!-- Salam -->
         <TextView
-            android:id="@+id/tv_greeting"
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="280dp"
-            android:text="@string/welcome"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            android:gravity="center"
+            android:alpha="1"
+            android:fontFamily="@font/medium"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="20sp"
-            android:textColor="@android:color/black" />
-    </FrameLayout>
+            android:text="@string/jake_sim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile_image"
+            tools:alpha="100"
+            tools:text="Username"/>
 
-    <FrameLayout
-        android:id="@+id/name_container"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_colored_all_rounded_corner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_container">
-
+        <!-- Username -->
         <TextView
-            android:id="@+id/tv_name_label"
+            android:id="@+id/tv_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|center_vertical"
-            android:layout_margin="10dp"
-            android:text="@string/name"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="32dp"
+            android:gravity="center"
+            android:alpha="1"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/textColor"
             android:textSize="16sp"
-            android:textColor="@android:color/black" />
+            android:text="@string/jake_sim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:alpha="100"
+            tools:text="Username"/>
 
-        <ImageView
-            android:id="@+id/iv_name_edit"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="10dp"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_edit_24dp"
-            android:contentDescription="@string/edit_icon" />
-    </FrameLayout>
+        <!-- Switch for Dark Mode -->
+        <Switch
+            android:id="@+id/switch_dark_mode"
+            android:layout_width="328dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/dark_mode"
+            android:textSize="16sp"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/textColor"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_email" />
 
-    <FrameLayout
-        android:id="@+id/email_container"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_colored_all_rounded_corner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_container">
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switch_dark_mode" />
 
+
+        <!-- Language -->
         <TextView
-            android:id="@+id/tv_email_label"
+            android:id="@+id/tv_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|center_vertical"
-            android:layout_margin="10dp"
-            android:text="@string/email"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/language"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/textColor"
             android:textSize="16sp"
-            android:textColor="@android:color/black" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/switch_dark_mode" />
 
-        <ImageView
-            android:id="@+id/iv_email_edit"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="10dp"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_edit_24dp"
-            android:contentDescription="@string/edit_icon" />
-    </FrameLayout>
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_language" />
 
-    <FrameLayout
-        android:id="@+id/age_container"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_colored_all_rounded_corner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_container">
-
+        <!-- Change Password -->
         <TextView
-            android:id="@+id/tv_age_label"
+            android:id="@+id/tv_changepassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|center_vertical"
-            android:layout_margin="10dp"
-            android:text="@string/age"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/edit_profile"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/textColor"
             android:textSize="16sp"
-            android:textColor="@android:color/black" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_language" />
 
-        <ImageView
-            android:id="@+id/iv_age_edit"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="10dp"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_edit_24dp"
-            android:contentDescription="@string/edit_icon" />
-    </FrameLayout>
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_changepassword" />
 
-    <FrameLayout
-        android:id="@+id/info_container"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_colored_all_rounded_corner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/age_container">
-
+        <!-- Sign Out -->
         <TextView
-            android:id="@+id/tv_info_label"
+            android:id="@+id/tv_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|center_vertical"
-            android:layout_margin="10dp"
-            android:text="@string/info"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/sign_out"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/textColor"
             android:textSize="16sp"
-            android:textColor="@android:color/black" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_changepassword" />
 
-        <ImageView
-            android:id="@+id/iv_info_edit"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="10dp"
-            android:layout_gravity="end|center_vertical"
-            android:src="@drawable/ic_edit_24dp"
-            android:contentDescription="@string/edit_icon" />
-    </FrameLayout>
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_logout" />
 
-    <Button
-        android:id="@+id/btn_save"
-        android:layout_width="305dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/bg_colored_all_rounded_corner"
-        android:text="@string/save"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/info_container"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="305dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/bg_black_all_rounded_corner"
-        android:text="@string/logout"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/btn_save"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/white"-->
+<!--    tools:context=".ui.profile.ProfileFragment">-->
+
+<!--    &lt;!&ndash; FrameLayout untuk Header, Foto Profil, dan Salam &ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:id="@+id/top_container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingBottom="20dp"-->
+<!--        android:background="@drawable/bg_colored_bottom_rounded_corner"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        &lt;!&ndash; Header Profil &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tv_game"-->
+<!--            android:layout_width="193dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:paddingTop="8dp"-->
+<!--            android:paddingBottom="8dp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="20sp"-->
+<!--            android:text="@string/header_profile"-->
+<!--            android:background="@drawable/bg_bottom_rounded_corner"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        &lt;!&ndash; Foto Profil &ndash;&gt;-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card_profile"-->
+<!--            android:layout_width="170dp"-->
+<!--            android:layout_height="170dp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="80dp"-->
+<!--            app:cardCornerRadius="85dp"-->
+<!--            app:cardElevation="4dp"-->
+<!--            app:cardBackgroundColor="@android:color/white">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_profile_image"-->
+<!--                android:layout_width="130dp"-->
+<!--                android:layout_height="130dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/ic_face_24"-->
+<!--                android:contentDescription="@string/your_photo" />-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        &lt;!&ndash; Ikon Tambah &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_add_icon"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="200dp"-->
+<!--            android:layout_marginStart="60dp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:background="@drawable/bg_circle"-->
+<!--            android:src="@drawable/ic_add_24dp"-->
+<!--            android:padding="8dp"-->
+<!--            android:elevation="8dp"-->
+<!--            android:contentDescription="@string/add_photo_icon" />-->
+
+<!--        &lt;!&ndash; Salam &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tv_greeting"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="280dp"-->
+<!--            android:text="@string/welcome"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textColor="@android:color/black" />-->
+<!--    </FrameLayout>-->
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/name_container"-->
+<!--        android:layout_width="325dp"-->
+<!--        android:layout_height="42dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_colored_all_rounded_corner"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/top_container">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_name_label"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start|center_vertical"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:text="@string/name"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/black" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_name_edit"-->
+<!--            android:layout_width="24dp"-->
+<!--            android:layout_height="24dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_gravity="end|center_vertical"-->
+<!--            android:src="@drawable/ic_edit_24dp"-->
+<!--            android:contentDescription="@string/edit_icon" />-->
+<!--    </FrameLayout>-->
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/email_container"-->
+<!--        android:layout_width="325dp"-->
+<!--        android:layout_height="42dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_colored_all_rounded_corner"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/name_container">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_email_label"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start|center_vertical"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:text="@string/email"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/black" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_email_edit"-->
+<!--            android:layout_width="24dp"-->
+<!--            android:layout_height="24dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_gravity="end|center_vertical"-->
+<!--            android:src="@drawable/ic_edit_24dp"-->
+<!--            android:contentDescription="@string/edit_icon" />-->
+<!--    </FrameLayout>-->
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/age_container"-->
+<!--        android:layout_width="325dp"-->
+<!--        android:layout_height="42dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_colored_all_rounded_corner"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/email_container">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_age_label"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start|center_vertical"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:text="@string/age"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/black" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_age_edit"-->
+<!--            android:layout_width="24dp"-->
+<!--            android:layout_height="24dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_gravity="end|center_vertical"-->
+<!--            android:src="@drawable/ic_edit_24dp"-->
+<!--            android:contentDescription="@string/edit_icon" />-->
+<!--    </FrameLayout>-->
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/info_container"-->
+<!--        android:layout_width="325dp"-->
+<!--        android:layout_height="42dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_colored_all_rounded_corner"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/age_container">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_info_label"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start|center_vertical"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:text="@string/info"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/black" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_info_edit"-->
+<!--            android:layout_width="24dp"-->
+<!--            android:layout_height="24dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_gravity="end|center_vertical"-->
+<!--            android:src="@drawable/ic_edit_24dp"-->
+<!--            android:contentDescription="@string/edit_icon" />-->
+<!--    </FrameLayout>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_save"-->
+<!--        android:layout_width="305dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@drawable/bg_colored_all_rounded_corner"-->
+<!--        android:text="@string/save"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/info_container"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_logout"-->
+<!--        android:layout_width="305dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@drawable/bg_black_all_rounded_corner"-->
+<!--        android:text="@string/logout"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/btn_save"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

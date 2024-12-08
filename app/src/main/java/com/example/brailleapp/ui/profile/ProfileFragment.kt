@@ -1,60 +1,132 @@
 package com.example.brailleapp.ui.profile
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Switch
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.example.brailleapp.R
+import com.example.brailleapp.ui.signin.SigninActivity
+import com.example.brailleapp.utils.NightMode
+import java.util.Locale
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private lateinit var profileName: TextView
+    private lateinit var profileEmail: TextView
+    private lateinit var profileUsername: TextView // Jika ingin menampilkan username
+
+    companion object {
+        const val REQUEST_CODE_EDIT_PROFILE = 1 // Kode request untuk edit profile
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        profileName = view.findViewById(R.id.tv_name)
+        profileEmail = view.findViewById(R.id.tv_email)
+//        profileUsername = view.findViewById(R.id.tv_username)
+
+        loadUserProfile()
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val toolbar: androidx.appcompat.widget.Toolbar = view.findViewById(R.id.toolbar)
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+
+        val darkModeSwitch: Switch = view.findViewById(R.id.switch_dark_mode)
+        darkModeSwitch.isChecked = isNightModeEnabled()
+        darkModeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            setNightMode(isChecked)
+        }
+
+        val changePasswordTextView: TextView = view.findViewById(R.id.tv_changepassword)
+        changePasswordTextView.setOnClickListener {
+            val intent = Intent(activity, EditProfileActivity::class.java).apply {
+                val sharedPref = activity?.getSharedPreferences("userDetails", Context.MODE_PRIVATE)
+                putExtra("name", sharedPref?.getString("name", ""))
+                putExtra("email", sharedPref?.getString("email", ""))
+                putExtra("username", sharedPref?.getString("username", ""))
+                putExtra("password", sharedPref?.getString("password", ""))
             }
+            startActivityForResult(intent, REQUEST_CODE_EDIT_PROFILE)
+        }
+
+        val languageTextView: TextView = view.findViewById(R.id.tv_language)
+        languageTextView.setOnClickListener {
+            languageTextView.setTextColor(ContextCompat.getColor(requireContext(), R.color.purple11))
+            val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+            startActivity(intent)
+        }
+
+        val signOutTextView: TextView = view.findViewById(R.id.tv_logout)
+        signOutTextView.setOnClickListener {
+            signOutTextView.setTextColor(ContextCompat.getColor(requireContext(), R.color.purple11))
+            val sharedPref = activity?.getSharedPreferences("userDetails", Context.MODE_PRIVATE)
+            with(sharedPref?.edit()) {
+                this?.clear()
+                this?.apply()
+            }
+            val loginPref = activity?.getSharedPreferences("loginStatus", Context.MODE_PRIVATE)
+            with(loginPref?.edit()) {
+                this?.putBoolean("isLoggedIn", false)
+                this?.apply()
+            }
+            val intent = Intent(activity, SigninActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }
+    }
+
+    private fun loadUserProfile() {
+        val sharedPref = activity?.getSharedPreferences("userDetails", Context.MODE_PRIVATE)
+        profileName.text = sharedPref?.getString("name", "")
+        profileEmail.text = sharedPref?.getString("email", "")
+//        profileUsername.text = sharedPref?.getString("username", "")
+    }
+
+    private fun isNightModeEnabled(): Boolean {
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val nightModePref = sharedPreferences.getString(getString(R.string.pref_key_dark), NightMode.AUTO.name)
+        val nightMode = NightMode.valueOf(nightModePref!!.toUpperCase(Locale.getDefault())).value
+        return nightMode == AppCompatDelegate.MODE_NIGHT_YES
+    }
+
+    private fun setNightMode(isEnabled: Boolean) {
+        val nightMode = if (isEnabled) {
+            NightMode.ON.value
+        } else {
+            NightMode.OFF.value
+        }
+        AppCompatDelegate.setDefaultNightMode(nightMode)
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        sharedPreferences.edit().putString(getString(R.string.pref_key_dark), if (isEnabled) NightMode.ON.name else NightMode.OFF.name).apply()
+        activity?.recreate()
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE_EDIT_PROFILE && resultCode == AppCompatActivity.RESULT_OK) {
+            loadUserProfile()
+        }
     }
 }

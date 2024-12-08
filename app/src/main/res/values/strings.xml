@@ -18,12 +18,12 @@
     <string name="add_photo_icon">Add photo icon</string>
     <string name="edit_icon">edit icon</string>
     <string name="logout">LOGOUT</string>
-    <string name="save">SIMPAN</string>
     <string name="info">Info</string>
     <string name="age">Usia</string>
-    <string name="email">Email</string>
-    <string name="name">Nama</string>
-    <string name="welcome">Selamat Datang, Yaya!</string>
+    <!--    <string name="save">SIMPAN</string>-->
+    <!--    <string name="email">Email</string>-->
+    <!--    <string name="name">Nama</string>-->
+    <!--    <string name="welcome">Selamat Datang, Yaya!</string>-->
 
     <string name="tv_header_list">LIST BRAILLE</string>
     <string name="image_words">Image Words</string>
@@ -50,6 +50,59 @@
     <string name="btn5">Tombol 5</string>
     <string name="btn6">Tombol 6</string>
     <string name="next">Lanjut</string>
+
+
+    <!--    SIGN IN, SIGN UP, PROFILE, EDIT PROFILE     -->
+    <string name="invalid_email">Email format is invalid</string>
+    <string name="password_less_8">Password less then 8</string>
+    <string name="required_field">Please fill out this field</string>
+    <string name="create_your_account_here">Create Your Account Here</string>
+    <string name="name">Name</string>
+    <string name="enter_your_name_here">Enter your name here</string>
+    <string name="email">Email</string>
+    <string name="enter_your_email_here">Enter your email here</string>
+    <string name="password">Password</string>
+    <string name="enter_your_password_here">Enter your password here</string>
+    <string name="create_account">Create Account</string>
+    <string name="welcome">Hi! Welcome Back!</string>
+    <string name="please_login_first">Please login first!</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <color name="header">#ca9eab</color>
+    <string name="profile_image">Profile Image</string>
+    <string name="jake_sim">Jake Sim</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="username">Username</string>
+    <string name="save">Save</string>
+    <string name="language">Language</string>
+    <string name="enter_your_usernmae_here">Enter your usernmae here</string>
+    <string name="enter_your_username_here">Enter your username here</string>
+    <string name="enter_your_password_her">Enter your password here</string>
+    <string name="username_too_short">Username must be at least 4 characters</string>
+    <string name="username_invalid_characters">Username can only contain letters, numbers, and underscores</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="change_password">Change Password</string>
+    <string name="schedule_notification">Schedule Notification</string>
+    <string name="username_already_taken">Username is already taken.</string>
+    <string name="email_already_registered">Email is already registered.</string>
+    <string name="validation_failed">Failed to validate input. Please try again.</string>
+
+    <!-- Night Mode Preferences -->
+    <string name="pref_dark_title">Dark mode</string>
+    <string name="pref_key_dark" translatable="false">key_dark_mode</string>
+    <string name="pref_dark_follow_system" translatable="false">follow_system</string>
+    <string name="pref_dark_on" translatable="false">on</string>
+    <string name="pref_dark_off" translatable="false">off</string>
+    <string name="dark_mode_auto">Automatic</string>
+    <string name="dark_mode_on">Dark mode</string>
+    <string name="dark_mode_off">Light mode</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="enter_new_password_here">Enter new password here</string>
+    <string name="enter_new_username_here">Enter new username here</string>
+    <string name="enter_new_name_here">Enter new name here</string>
+    <string name="welcome_to_the_app">welcome_to_the_app</string>
 
 
 </resources>

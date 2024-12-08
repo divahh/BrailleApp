@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.BrailleApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- For Button and Appbar. -->
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">@color/dark_blue</item>
         <!-- For status bar. -->
         <item name="colorPrimaryVariant">@color/white</item>
         <!-- For text or icon on colorPrimary. -->
@@ -17,10 +17,20 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize font. -->
         <item name="android:fontFamily">@font/plusjakartasans_extrabold</item>
-        <!-- Customize background color. -->
-        <item name="android:windowBackground">@color/background_app</item>
         <!-- Customize navigation bar. -->
         <item name="android:navigationBarColor">@color/white</item>
 
     </style>
+
+
+    <style name="CustomTextInputLayoutOutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- Warna outline saat fokus -->
+        <item name="boxStrokeColor">@color/dark_blue</item>
+        <!-- Warna hint -->
+        <item name="hintTextColor">@color/dark_blue</item>
+        <!-- Warna outline saat tidak fokus -->
+        <!--<item name="boxStrokeColorFocused">@color/colorAccent</item>-->
+    </style>
+
+
 </resources>

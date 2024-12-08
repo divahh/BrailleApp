@@ -11,4 +11,15 @@
     <color name="background_app">#78B3BA</color>
     <color name="dark_blue">#306BA4</color>
     <color name="dark_gray">#666666</color>
+
+
+
+
+<!--    SIGN IN, SIGN OUT, PROFILE, EDIT PROFILE      -->
+    <color name="pink_gelap">#316B83</color>
+    <color name="textColor">#504A4A</color>
+    <color name="purple11">#715080</color>
+    <color name="title_purple11">#715080</color>
+    <color name="gray">#E1DEDE</color>
+
 </resources>
