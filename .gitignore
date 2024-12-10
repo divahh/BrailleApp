@@ -3,3 +3,4 @@ package-lock.json
 firebaseConfig.json
 .eslintrc.json
 eslint.config.mjs
+package-lock.json
