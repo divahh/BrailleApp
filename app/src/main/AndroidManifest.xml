@@ -16,6 +16,9 @@
         android:theme="@style/Theme.BrailleApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.TryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.signin.SigninActivity"
             android:exported="false" />
         <activity

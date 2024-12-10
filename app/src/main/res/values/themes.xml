@@ -14,7 +14,7 @@
         <!-- text or icon on colorSecondary. -->
         <item name="colorOnSecondary">@color/dark_blue</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
         <!-- Customize font. -->
         <item name="android:fontFamily">@font/plusjakartasans_extrabold</item>
         <!-- Customize navigation bar. -->
