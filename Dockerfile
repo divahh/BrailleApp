@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Ekspose port default untuk aplikasi (ubah jika perlu)
-EXPOSE 3000
+EXPOSE 9000
 
 # Perintah untuk menjalankan aplikasi
 CMD ["npm", "start"]
