@@ -1,3 +1,5 @@
 brailleapps-2aa76b9eb1f9.json
 package-lock.json
 firebaseConfig.json
+.eslintrc.json
+eslint.config.mjs
