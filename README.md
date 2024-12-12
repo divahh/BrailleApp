@@ -11,7 +11,7 @@ Efficient Metadata Management in Firestore: Prediction results and image URLs ar
 
 ### Prerequisites
 
-Python 3.x with required libraries (install using pip install google-cloud-storage google-cloud-firestore flask tensorflow Pillow numpy)
+Python 3.x with required libraries install using (pip install google-cloud-storage google-cloud-firestore flask tensorflow Pillow numpy) or (pip install -r requirements.txt)
 A Google Cloud project with enabled Cloud Storage and Firestore APIs.
 Service account credentials with appropriate permissions (stored as an environment variable named GCP_CREDENTIALS).
 ### Configuration
