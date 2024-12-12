@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.brailleapp.databinding.ActivityMainBinding
 import com.example.brailleapp.ui.game.GameFragment
+import com.example.brailleapp.ui.list.ListBrailleFragment
 import com.example.brailleapp.ui.profile.ProfileFragment
 import com.example.brailleapp.ui.scan.ScanFragment
 
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding.navView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_scan -> loadFragment(ScanFragment())
+                R.id.navigation_list -> loadFragment(ListBrailleFragment())
                 R.id.navigation_games -> loadFragment(GameFragment())
                 R.id.navigation_profile -> loadFragment(ProfileFragment())
                 else -> false
