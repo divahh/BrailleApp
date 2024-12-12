@@ -25,13 +25,15 @@ Execute python app.py to launch the API server. The default port is 5000.
 Use tools like Postman or curl to send prediction requests to the /predict endpoint.
 ## API Endpoint
 
-**| Field                  | Description                                                   |
-|-------------------------|----------------------------------------------------------------|
-| URL                   | http://localhost:5000/predict (replace with your server address) |
-| Method                 | POST                                                           |
-| Request Body          | Form data key: image  <br> Value: A file object containing the Braille image. |
-| Response (Success)   | JSON object with fields:  <br> - prediction: Predicted Braille character (e.g., "A", "B"). <br> - image_url: Public URL of the uploaded image in GCS. |
-| Response (Error)     | JSON object with field: error: Description of the encountered error. |
+## API Endpoint
+
+| Field | Description |
+|---|---|
+| URL | `http://localhost:5000/predict` (replace with your server address) |
+| Method | `POST` |
+| Request Body | Form data key: `image`  <br> Value: A file object containing the Braille image. |
+| Response (Success) | JSON object with fields: <br> - `prediction`: Predicted Braille character (e.g., "A", "B"). <br> - `image_url`: Public URL of the uploaded image in GCS. |
+| Response (Error) | JSON object with field: `error`: Description of the encountered error. |
 
 ## Example Usage (using Postman)
 
