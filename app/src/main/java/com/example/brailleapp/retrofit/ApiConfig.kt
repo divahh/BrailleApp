@@ -16,11 +16,11 @@ object ApiConfig {
             .create(ApiService::class.java)
     }
 
-    val apiImageService: ApiService by lazy {
+    val apiImageService: ApiImageService by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_IMAGE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(ApiService::class.java)
+            .create(ApiImageService::class.java)
     }
 }
