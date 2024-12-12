@@ -30,7 +30,7 @@
         android:alpha="1"
         android:text="@string/welcome"
         android:textColor="@color/textColor"
-        android:fontFamily="@font/bold"
+        android:fontFamily="@font/medium"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

@@ -3,13 +3,13 @@ package com.example.brailleapp.ui.profile
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.example.brailleapp.R
 import com.example.brailleapp.ui.customview.CustomTextInput
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class EditProfileActivity : AppCompatActivity() {
 
@@ -46,14 +46,11 @@ class EditProfileActivity : AppCompatActivity() {
 
             val newUsername = editUsername.text.toString()
             if (usernameUser != newUsername) {
-                // Cek apakah username sudah terdaftar
                 reference.child(newUsername).get().addOnSuccessListener { snapshot ->
                     if (snapshot.exists()) {
                         // Username sudah terdaftar, tampilkan pesan error
-                        Toast.makeText(this@EditProfileActivity, "Username is already taken.", Toast.LENGTH_SHORT).show()
-                        saveButton.isEnabled = true // Pastikan tombol save tetap enabled
+                        showErrorDialog("Username is already taken.")
                     } else {
-                        // Username tidak terdaftar, lanjutkan dengan update data
                         isChanged = true
                         reference.child(usernameUser).removeValue()
                         val updatedData = mapOf(
@@ -64,30 +61,17 @@ class EditProfileActivity : AppCompatActivity() {
                         )
                         reference.child(newUsername).setValue(updatedData)
                         usernameUser = newUsername
-                        Toast.makeText(this@EditProfileActivity, "Username updated.", Toast.LENGTH_SHORT).show()
-
-                        // Setelah berhasil update, arahkan ke ProfileFragment
-                        Toast.makeText(this@EditProfileActivity, "Profile updated successfully.", Toast.LENGTH_SHORT).show()
-                        val intent = Intent()
-                        intent.putExtra("profile_updated", true)
-                        setResult(RESULT_OK, intent)
-                        finish()
+                        showSuccessDialog()
                     }
                 }
             } else {
-                // Jika username tidak diubah, lanjutkan pengecekan data lainnya
                 if (isChanged) {
-                    Toast.makeText(this@EditProfileActivity, "Profile updated successfully.", Toast.LENGTH_SHORT).show()
-                    val intent = Intent()
-                    intent.putExtra("profile_updated", true)
-                    setResult(RESULT_OK, intent)
-                    finish()
+                    showSuccessDialog()
                 } else {
-                    Toast.makeText(this@EditProfileActivity, "No changes found.", Toast.LENGTH_SHORT).show()
+                    showNoChangesDialog()
                 }
             }
         }
-
     }
 
     private fun isNameChanged(): Boolean {
@@ -116,31 +100,6 @@ class EditProfileActivity : AppCompatActivity() {
         }
     }
 
-    private fun isUsernameChanged(): Boolean {
-        val newUsername = editUsername.text.toString()
-        return if (usernameUser != newUsername) {
-            reference.child(newUsername).get().addOnSuccessListener { snapshot ->
-                if (snapshot.exists()) {
-                    Toast.makeText(this@EditProfileActivity, "Username is already taken.", Toast.LENGTH_SHORT).show()
-                } else {
-                    reference.child(usernameUser).removeValue()
-                    val updatedData = mapOf(
-                        "name" to nameUser,
-                        "email" to emailUser,
-                        "username" to newUsername,
-                        "password" to passwordUser
-                    )
-                    reference.child(newUsername).setValue(updatedData)
-                    usernameUser = newUsername
-                    Toast.makeText(this@EditProfileActivity, "Username updated.", Toast.LENGTH_SHORT).show()
-                }
-            }
-            true
-        } else {
-            false
-        }
-    }
-
     private fun showData() {
         val intent = intent
         nameUser = intent.getStringExtra("name").toString()
@@ -151,5 +110,37 @@ class EditProfileActivity : AppCompatActivity() {
         editName.setText(nameUser)
         editUsername.setText(usernameUser)
         editPassword.setText(passwordUser)
+    }
+
+    private fun showNoChangesDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("No Changes Detected")
+        builder.setMessage("No changes were made to your profile. What would you like to do?")
+        builder.setPositiveButton("Stay") { dialog, _ ->
+            dialog.dismiss()
+        }
+        builder.setNegativeButton("Go Back") { _, _ ->
+            finish()
+        }
+        builder.create().show()
+    }
+
+    private fun showErrorDialog(message: String) {
+        AlertDialog.Builder(this)
+            .setTitle("Error")
+            .setMessage(message)
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .create()
+            .show()
+    }
+
+    private fun showSuccessDialog() {
+        Toast.makeText(this, "Profile updated successfully.", Toast.LENGTH_SHORT).show()
+        val intent = Intent()
+        intent.putExtra("profile_updated", true)
+        setResult(RESULT_OK, intent)
+        finish()
     }
 }

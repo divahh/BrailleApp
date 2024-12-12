@@ -106,6 +106,8 @@
     <string name="list_braille">List Braille</string>
     <string name="image_item">Image item</string>
     <string name="title_list">List</string>
+    <string name="arrow_icon">Arrow Icon</string>
+    <string name="notification_icon">Notification Icon</string>
 
 
 </resources>
