@@ -103,6 +103,9 @@
     <string name="enter_new_username_here">Enter new username here</string>
     <string name="enter_new_name_here">Enter new name here</string>
     <string name="welcome_to_the_app">welcome_to_the_app</string>
+    <string name="list_braille">List Braille</string>
+    <string name="image_item">Image item</string>
+    <string name="title_list">List</string>
 
 
 </resources>

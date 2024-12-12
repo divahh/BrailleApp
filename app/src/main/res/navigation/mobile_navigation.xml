@@ -12,6 +12,12 @@
         android:label="@string/title_scan"
         tools:layout="@layout/fragment_scan" />
 
+    <fragment
+        android:id="@+id/navigation_list"
+        android:name="com.example.brailleapp.ui.scan.ScanFragment"
+        android:label="@string/title_scan"
+        tools:layout="@layout/fragment_list_braille" />
+
     <!-- Game Fragment -->
     <fragment
         android:id="@+id/navigation_games"

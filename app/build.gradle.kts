@@ -19,7 +19,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"${project.properties["BASE_URL"]}\"")
+            buildConfigField("String", "BASE_IMAGE_URL", "\"${project.properties["BASE_IMAGE_URL"]}\"")
+        }
         release {
+            buildConfigField("String", "BASE_URL", "\"${project.properties["BASE_URL"]}\"")
+            buildConfigField("String", "BASE_IMAGE_URL", "\"${project.properties["BASE_IMAGE_URL"]}\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -36,6 +42,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -55,6 +62,13 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation ("androidx.activity:activity-ktx:1.7.2")
+    implementation ("androidx.fragment:fragment-ktx:1.6.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
+    implementation("com.github.yalantis:ucrop:2.2.8")
 
     //    SIGN IN, SIGN UP, PROFILE, EDIT PROFILE
 

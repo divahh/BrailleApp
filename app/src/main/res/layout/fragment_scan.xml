@@ -105,8 +105,7 @@
                 android:contentDescription="Placeholder for image"
                 android:scaleType="fitCenter"
                 android:background="@drawable/bg_rounded_preview"
-                android:src="@drawable/ic_input_image"
-                app:tint="@color/white" />
+                android:src="@drawable/ic_input_image" />
 
             <TextView
                 android:id="@+id/tvPreviewText"
@@ -117,6 +116,18 @@
                 android:fontFamily="sans-serif-light"
                 android:text="Upload gambar untuk di prediksi"
                 android:textColor="@android:color/darker_gray" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </FrameLayout>
 
         <Button
