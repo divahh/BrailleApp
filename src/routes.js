@@ -1,31 +1,26 @@
-const {
-  creates,
-  getAll,
-  getId,
-  deletes,
-} = require('./handler');
+import handlers from './handler.js';
 
-const routes = [
-  {
-    method: 'POST',
-    path: '/images',
-    handler: creates,
-  },
-  {
-    method: 'GET',
-    path: '/images',
-    handler: getAll,
-  },
+export const routes = [
+  // {
+  //   method: 'POST',
+  //   path: '/images',
+  //   handler: handlers.creates,
+  // },
   {
     method: 'GET',
-    path: '/images/{id}',
-    handler: getId,
+    path: '/images',
+    handler: handlers.getAll,
   },
-  {
-    method: 'DELETE',
-    path: '/images/{id}',
-    handler: deletes,
-  },
+  // {
+  //   method: 'GET',
+  //   path: '/images/{id}',
+  //   handler: handlers.getId,
+  // },
+  // {
+  //   method: 'DELETE',
+  //   path: '/images/delete/{id}',
+  //   handler: handlers.deletes,
+  // },
 ];
 
-module.exports = routes;
+export default routes

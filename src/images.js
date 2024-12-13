@@ -1,3 +1,4 @@
-const images = [];
+export const images = [];
 
-module.exports = images;
+// module.exports = images;
+export default images
