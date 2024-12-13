@@ -108,6 +108,8 @@
     <string name="title_list">List</string>
     <string name="arrow_icon">Arrow Icon</string>
     <string name="notification_icon">Notification Icon</string>
+    <string name="pilih_sumber_gambar">Pilih sumber gambar</string>
+    <string name="tutup">Tutup</string>
 
 
 </resources>

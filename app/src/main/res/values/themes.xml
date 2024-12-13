@@ -15,8 +15,6 @@
         <item name="android:statusBarColor">?attr/colorPrimary</item>
         <!-- Customize font. -->
         <item name="android:fontFamily">@font/plusjakartasans_extrabold</item>
-        <!-- Customize navigation bar. -->
-        <item name="android:navigationBarColor">@color/white</item>
     </style>
 
 

@@ -25,9 +25,6 @@
             tools:replace="android:exported"
             android:exported="true" />
         <activity
-            android:name=".ui.TryActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.signin.SigninActivity"
             android:exported="false" />
         <activity

@@ -50,8 +50,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/regular"
-            android:text="Pilih metode untuk memulai scan produk:"
-            android:textColor="@color/black"
+            android:text="@string/pilih_sumber_gambar"
+            android:textColor="@color/textColor"
             android:textSize="16sp" />
 
         <LinearLayout

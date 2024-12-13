@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/colorPrimaryVariant"
     android:padding="16dp">
 
     <!-- Gambar yang diupload -->
@@ -24,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
-        android:textColor="@color/black"
+        android:textColor="@color/textColor"
         android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/ivUploadedImage"
@@ -38,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/dark_blue"
-        android:text="Tutup"
+        android:text="@string/tutup"
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@id/tvPredictionResult"
         app:layout_constraintStart_toStartOf="parent"

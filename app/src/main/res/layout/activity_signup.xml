@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline1"
-        app:srcCompat="@drawable/face_app" />
+        app:srcCompat="@drawable/ic_signup" />
 
     <TextView
         android:id="@+id/create_account"
