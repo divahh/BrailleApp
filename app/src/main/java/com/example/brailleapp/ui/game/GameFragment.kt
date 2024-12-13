@@ -4,17 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.brailleapp.R
 import com.example.brailleapp.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
 
     private var _binding: FragmentGameBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,17 +19,22 @@ class GameFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val gameViewModel =
-            ViewModelProvider(this)[GameViewModel::class.java]
-
         _binding = FragmentGameBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-//        val textView: TextView = binding.tvGame
-//        gameViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-        return root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Navigasi ke QuestionsFragment saat tombol Yes ditekan
+        binding.btYes.setOnClickListener {
+//            findNavController().navigate(R.id.action_navigation_games_to_navigation_questions)
+        }
+
+        // Navigasi ke TryBrailleFragment saat tombol No ditekan
+        binding.btNo.setOnClickListener {
+//            findNavController().navigate(R.id.action_navigation_games_to_navigation_try_braille)
+        }
     }
 
     override fun onDestroyView() {

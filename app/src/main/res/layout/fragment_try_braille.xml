@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimaryVariant"
-    tools:context=".ui.game.QuestionsFragment">
+    tools:context=".ui.game.TryBrailleFragment">
 
     <TextView
         android:id="@+id/tv_game"
@@ -16,36 +16,24 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:text="@string/header_game"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:background="@drawable/bg_bottom_rounded_corner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_score_games"
+        android:id="@+id/tv_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/default_score"
+        android:text="@string/pembiasaan_btn"
         android:textColor="?attr/colorOnPrimary"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_game" />
-
-    <TextView
-        android:id="@+id/tv_questions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/question_1_c"
-        android:textColor="?attr/colorOnPrimary"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_score_games" />
 
     <Button
         android:id="@+id/btn_1"
@@ -54,10 +42,10 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="15dp"
         android:text="@string/btn1"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_questions" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
 
     <Button
         android:id="@+id/btn_4"
@@ -66,10 +54,10 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="28dp"
         android:text="@string/btn4"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_questions" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
 
     <Button
         android:id="@+id/btn_2"
@@ -77,7 +65,7 @@
         android:layout_height="170dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:text="@string/btn2"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +77,7 @@
         android:layout_height="170dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="28dp"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:text="@string/btn5"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +89,7 @@
         android:layout_height="170dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:text="@string/btn3"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,20 +101,20 @@
         android:layout_height="170dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="28dp"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:text="@string/btn6"
         android:background="@drawable/bg_all_rounded_corner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_5" />
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btnBack"
         android:layout_width="305dp"
         android:layout_height="50dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/bg_all_rounded_corner"
-        android:text="@string/next"
-        android:textColor="@color/white"
+        android:text="@string/back"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
