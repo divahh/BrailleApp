@@ -1,13 +1,15 @@
 package com.example.brailleapp.ui.game
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.brailleapp.R
 import com.example.brailleapp.databinding.FragmentGameBinding
+import com.example.brailleapp.ui.game.QuestionActivity
+import com.example.brailleapp.ui.game.TryBrailleActivity
 
 class GameFragment : Fragment() {
 
@@ -26,14 +28,16 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Navigasi ke QuestionsFragment saat tombol Yes ditekan
         binding.btYes.setOnClickListener {
-//            findNavController().navigate(R.id.action_navigation_games_to_navigation_questions)
+            // Start QuestionActivity
+            val intent = Intent(activity, QuestionActivity::class.java)
+            startActivity(intent)
         }
 
-        // Navigasi ke TryBrailleFragment saat tombol No ditekan
         binding.btNo.setOnClickListener {
-//            findNavController().navigate(R.id.action_navigation_games_to_navigation_try_braille)
+            // Start TryBrailleActivity
+            val intent = Intent(activity, TryBrailleActivity::class.java)
+            startActivity(intent)
         }
     }
 

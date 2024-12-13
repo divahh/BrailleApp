@@ -5,7 +5,6 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_scan">
 
-    <!-- Scan Fragment -->
     <fragment
         android:id="@+id/navigation_scan"
         android:name="com.example.brailleapp.ui.scan.ScanFragment"
@@ -19,7 +18,6 @@
         android:label="@string/title_list"
         tools:layout="@layout/fragment_list_braille" />
 
-    <!-- Game Fragment -->
     <fragment
         android:id="@+id/navigation_games"
         android:name="com.example.brailleapp.ui.game.GameFragment"
@@ -27,21 +25,18 @@
         tools:layout="@layout/fragment_game">
     </fragment>
 
-    <!-- Profile Fragment -->
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.brailleapp.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 
-    <!-- Try Braille Fragment -->
     <fragment
         android:id="@+id/navigation_try_braille"
         android:name="com.example.brailleapp.ui.game.TryBrailleFragment"
         android:label="@string/title_game"
         tools:layout="@layout/fragment_try_braille" />
 
-    <!-- Questions Fragment -->
     <fragment
         android:id="@+id/navigation_questions"
         android:name="com.example.brailleapp.ui.game.QuestionsFragment"
@@ -49,7 +44,6 @@
         tools:layout="@layout/fragment_questions" >
     </fragment>
 
-    <!-- Congratulate Fragment -->
     <fragment
         android:id="@+id/navigation_congratulate"
         android:name="com.example.brailleapp.ui.game.CongratulateFragment"
